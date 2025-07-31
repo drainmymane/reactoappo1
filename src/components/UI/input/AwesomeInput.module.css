@@ -1,0 +1,7 @@
+.MyInput{
+    border: 5px #fcf solid ;
+    width: 200px;
+    height: 30px;
+    font-size: 20px;
+    outline: #fcf;
+}

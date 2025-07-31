@@ -1,0 +1,10 @@
+.MyBtn{
+    width: 100px;
+    height: 50px;
+    margin: 10px;;
+    border-style: none;
+    font-weight: 500;
+    color: aliceblue;
+    background-color: black;
+    cursor: pointer;
+}
