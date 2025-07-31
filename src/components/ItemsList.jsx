@@ -15,7 +15,7 @@ const ItemsList = ({ items, title, remove,limit,page }) => {
                             animate={{ opacity: 1, x: 0 }}
                             exit={{ opacity: 0, x: 20 }}
                             transition={{ duration: 0.2 }}
-                            layout 
+                            layout
                         >
                             <Items remove={remove} item={item} number={index + 1+ (page-1)*limit} />
                         </motion.div>

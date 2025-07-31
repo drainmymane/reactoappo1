@@ -1,5 +1,5 @@
 html{
-    scrollscroll-behavior: smooth;
+    scroll-behavior: smooth;
 }
 .App{
     display: flex;
@@ -65,4 +65,26 @@ html{
 .page_current{
     color: black !important;
     background-color: #fcf !important;
+}
+
+.navbar{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 50px;
+    background-color: #fcf;
+}
+
+.navbar_links a{
+    margin: 5px;
+    width: 100px;
+    height: 50px;
+    font-size: 25px;
+    text-decoration: none;
+    color: #303030;
+    background-color: aliceblue;
+}
+
+.navbar_links a:hover{
+    color: firebrick;
 }
