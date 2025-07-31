@@ -8,7 +8,8 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 600px;
+    flex-wrap:wrap;
+    width: 800px;
     margin: 5px;
     border: 3px dashed #fcf;
 }
@@ -28,4 +29,19 @@
 .sortirovka{
     display: flex;
     align-items: center;
+}
+
+.rotatingSqr{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    width: 120px;
+    height: 120px;
+    border-radius: 20%;
+    background-color: #fcf;
+    top:40%;
+    font-size: 30px;
+    font-weight: 600;
+    color: white;
 }
