@@ -1,19 +1,30 @@
-import { useEffect, useRef, useState } from "react";
-import './styles/App.css'
-import {Route,Routes,BrowserRouter,Link} from 'react-router'
-import Items from "./pages/Items.jsx";
-import About from "./pages/About.jsx";
+import { BrowserRouter } from 'react-router';
 import Navbar from "./components/Navbar.jsx";
+import AppRouter from "./components/AppRouter.jsx";
+import { AuthContext } from './components/context/context.js';
+import { useEffect, useState } from 'react';
 
 function App() {
+  const [isAuth, setAuth]=useState(false);
+  const [isLoading, setLoading]=useState(true);
+  useEffect(()=> {
+    if (localStorage.getItem('auth')){
+      setAuth(true);
+    }
+    setLoading(false);
+  })
+
   return (
-    <BrowserRouter>
-        <Navbar /> 
-        <Routes>
-            <Route path="/" element={<Items />} />
-            <Route path="/about" element={<About />} />
-        </Routes>
-    </BrowserRouter>
+    <AuthContext.Provider value={{
+      isAuth,
+      setAuth,
+      isLoading,
+    }}>
+      <BrowserRouter>
+          <Navbar />
+          <AppRouter />
+      </BrowserRouter>
+    </AuthContext.Provider>
   );
 }
 

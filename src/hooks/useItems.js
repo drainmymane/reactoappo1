@@ -8,7 +8,6 @@ function compare(a, b) {
 
 export const useSortedItems = (items, sort)=>{
     const sortedItems = React.useMemo(() =>{
-        console.log('goyda')
         if(sort){
           return (([...items].sort((a, b) => compare(a[sort],b[sort]))));
         }

@@ -1,4 +1,4 @@
-const test = [
+let test = [
   {
     "userId": 1,
     "id": 1,
@@ -7,7 +7,7 @@ const test = [
   {
     "userId": 1,
     "id": 2,
-    "title": "qui est esse"
+    "title": "qui  "
   },
   {
     "userId": 1,
@@ -501,14 +501,22 @@ const test = [
   }
 ]
 
-export default function generateRandomItems(count){
-    const items = [];
-    for (let i = 0; i < count; i++) {
-        items.push({
-            id: i,
-            title: test[i].title,
-            amount: Math.floor(Math.random() * 100) + 1 
-        });
-    }
-    return items;
-};
+
+export default class ApiService {
+  static labubu = test.map(item => ({
+    id: item.id,
+    title: item.title,
+    amount: Math.floor(Math.random() * 101)
+  }));
+
+  static async getItemById(id) {
+    // Находим элемент по id (а не по индексу массива)
+    const item = this.labubu.find(item => parseInt(item.id) === parseInt(id));
+
+    return {
+      id: item.id-1,
+      title: item.title,
+      amount: item.amount,
+    };
+  }
+}
